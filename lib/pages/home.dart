@@ -8,6 +8,83 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: appbar(),
+      backgroundColor: Colors.white,
+      body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        searchbar(),
+        SizedBox(
+          height: 40,
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              child: Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: Text(
+                  "Category",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600),
+                ),
+              ),
+            ),
+            SizedBox(15),
+            Container(
+              height: 150,
+              color: Colors.green,
+            ),
+          ],
+        )
+      ]),
+    );
+  }
+
+  Container searchbar() {
+    return Container(
+      margin: EdgeInsets.only(top: 40, left: 20, right: 20),
+      decoration: BoxDecoration(boxShadow: [
+        BoxShadow(
+            color: Color.fromARGB(255, 206, 206, 206),
+            blurRadius: 40,
+            spreadRadius: 0.0)
+      ]),
+      child: TextField(
+        decoration: InputDecoration(
+            filled: true,
+            fillColor: Colors.white,
+            contentPadding: EdgeInsets.all(15),
+            hintText: 'Search pancake',
+            hintStyle: TextStyle(
+                color: const Color.fromARGB(255, 164, 164, 164), fontSize: 14),
+            prefixIcon: Padding(
+              padding: const EdgeInsets.all(12),
+              child: SvgPicture.asset('assets/icons/Search.svg'),
+            ),
+            suffixIcon: Container(
+              width: 100,
+              child: IntrinsicHeight(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    VerticalDivider(
+                      color: Colors.amber,
+                      indent: 10,
+                      endIndent: 10,
+                      thickness: 0.5,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(12),
+                      child: SvgPicture.asset('assets/icons/Filter.svg'),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+                borderSide: BorderSide.none)),
+      ),
     );
   }
 
@@ -30,7 +107,7 @@ class Home extends StatelessWidget {
             width: 20,
           ),
           decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 168, 168, 168),
+              color: Color.fromARGB(255, 223, 223, 223),
               borderRadius: BorderRadius.circular((10))),
         ),
       ),
@@ -47,7 +124,7 @@ class Home extends StatelessWidget {
               width: 5,
             ),
             decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 168, 168, 168),
+                color: Color.fromARGB(255, 223, 223, 223),
                 borderRadius: BorderRadius.circular((10))),
           ),
         ),

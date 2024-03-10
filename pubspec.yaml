@@ -60,6 +60,8 @@ flutter:
   assets:
     - assets/icons/ArrowLeft.svg
     - assets/icons/dots.svg
+    - assets/icons/Search.svg
+    - assets/icons/Filter.svg
 
     # - images/a_dot_ham.jpeg
 
